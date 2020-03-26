@@ -13,7 +13,7 @@ public class TestAccount
 		//Account arr[]=accept();
 		//	display(arr);
 		int ch;
-		System.out.println("1.Saving \t2.current\t3.loan\t4.Demat");
+		System.out.println("1.Saving \t2.current\t3.Demat");
 		ch=sc.nextInt();
 		switch(ch)
 		{
@@ -40,6 +40,7 @@ public class TestAccount
 					h.setAmount(sc.nextInt());
 					h.setYear(sc.nextInt());
 					h.setInterest(sc.nextDouble());
+					break;
 
 				case 2:
 					CarLoan c1=new CarLoan();
@@ -49,6 +50,7 @@ public class TestAccount
 					c1.setAmount(sc.nextInt());
 					c1.setYear(sc.nextInt());
 					c1.setInterest(sc.nextDouble());
+					break;
 
 				case 3:
 					return;
@@ -60,10 +62,11 @@ public class TestAccount
 		case 2:
 			Current c=new Current();
 			accept(c);
+			break;
 		case 3:
 			Demat d=new Demat();
 			accept(d);
-
+			break;
 		}
 	}
 	public static void accept(Account a)
@@ -84,12 +87,13 @@ public class TestAccount
 		a.setAccno(sc.nextInt());
 		a.setCustname(sc.next());
 		a.setBalance(sc.nextInt());
+		a.setPan(sc.next());
 		if(a instanceof Saving)
 		{
 			System.out.println("Enter amtlimit and tlimit ");
 			Saving s=(Saving)a;
-
-			((Saving) s).setAmtlimit(sc.nextInt());
+			s.setTlimit(sc.nextInt());
+			s.setAmtlimit(sc.nextInt());
 
 			System.out.println(s);
 		}
@@ -98,6 +102,7 @@ public class TestAccount
 			System.out.println("Enter company name and Gst no:");
 			Current c=(Current)a;
 			c.setCompanyname(sc.next());
+			c.setGstNo(sc.next());
 		}
 		if(a instanceof Demat)
 		{

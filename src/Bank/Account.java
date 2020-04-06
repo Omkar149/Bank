@@ -32,6 +32,11 @@ public class Account {
 	public void setPan(String pan) {
 		Pan = pan;
 	}
+	@Override
+	public String toString() {
+		return getAccno()+"\t"+getCustname()+"\t"+getBalance()+"\t"+getPan();
+	}
+
 
 	
 }

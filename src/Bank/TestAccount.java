@@ -15,6 +15,12 @@ public class TestAccount
 		int ch;
 		System.out.println("1.Saving \t2.current\t3.Demat");
 		ch=sc.nextInt();
+		System.out.println("Enter acc no,custname,balance and pan no");
+		a.setAccno(sc.nextInt());
+		a.setCustname(sc.next());
+		a.setBalance(sc.nextInt());
+		a.setPan(sc.next());
+		System.out.println(a);
 		switch(ch)
 		{
 		case 1:
@@ -23,6 +29,7 @@ public class TestAccount
 			System.out.println("Do you want to take loan");
 			System.out.println("1.loan \t2.exit");
 			int choice=sc.nextInt();
+			System.out.println(s);
 			switch(choice)
 			{
 			case 1:
@@ -30,6 +37,7 @@ public class TestAccount
 				accept(l);
 				System.out.println("1.home loan \t2.car Loan \t3.exit");
 				int ch1=sc.nextInt();
+				System.out.println(l);
 				switch(ch1)
 				{
 				case 1:
@@ -40,6 +48,7 @@ public class TestAccount
 					h.setAmount(sc.nextInt());
 					h.setYear(sc.nextInt());
 					h.setInterest(sc.nextDouble());
+					System.out.println(h);
 					break;
 
 				case 2:
@@ -50,6 +59,7 @@ public class TestAccount
 					c1.setAmount(sc.nextInt());
 					c1.setYear(sc.nextInt());
 					c1.setInterest(sc.nextDouble());
+					System.out.println(c1);
 					break;
 
 				case 3:
@@ -62,10 +72,12 @@ public class TestAccount
 		case 2:
 			Current c=new Current();
 			accept(c);
+			System.out.println(c);
 			break;
 		case 3:
 			Demat d=new Demat();
 			accept(d);
+			System.out.println(d);
 			break;
 		}
 	}
@@ -83,18 +95,12 @@ public class TestAccount
 		return arr;
 		 */
 
-		System.out.println("Enter acc no,custname,balance and pan no");
-		a.setAccno(sc.nextInt());
-		a.setCustname(sc.next());
-		a.setBalance(sc.nextInt());
-		a.setPan(sc.next());
+	
 		if(a instanceof Saving)
 		{
 			System.out.println("Enter amtlimit and tlimit ");
-			Saving s=(Saving)a;
 			s.setTlimit(sc.nextInt());
 			s.setAmtlimit(sc.nextInt());
-
 			System.out.println(s);
 		}
 		if(a instanceof Current)
@@ -103,6 +109,7 @@ public class TestAccount
 			Current c=(Current)a;
 			c.setCompanyname(sc.next());
 			c.setGstNo(sc.next());
+			System.out.println(c);
 		}
 		if(a instanceof Demat)
 		{
